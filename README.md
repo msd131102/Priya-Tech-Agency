@@ -140,6 +140,28 @@ software/
 
 ---
 
+## 🚀 Live Demo & Test Credentials
+
+You can explore a live deployment of the application here:
+
+- **Demo:** https://priyatechagency.netlify.app/
+
+Use the following accounts to log in for each portal:
+
+- **Client**
+  - Email: `shivmodernz@gmail.com`
+  - Password: `client123`
+
+- **Employee**
+  - Email: `employee123@example.com`
+  - Password: `employee123`
+
+- **Admin**
+  - Email: `admin@software.com`
+  - Password: `admin123`
+
+---
+
 ## 🚀 Installation & Setup
 
 ### Prerequisites
