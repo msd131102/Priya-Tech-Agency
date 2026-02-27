@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-neutral-800;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    background: linear-gradient(-45deg, #faf5ff, #fdf4ff, #fef3c7, #fce7f3);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    position: relative;
+    overflow-x: hidden;
+    margin: 0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-neutral-900;
+  }
+  
+  /* Custom Scrollbar for Webkit Browsers */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #fdf4ff;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #c4b5fd, #a78bfa);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #a78bfa, #8b5cf6);
+  }
+  
+  /* For cards and containers with scrolling */
+  .card::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f0abfc, #e879f9);
+  }
+  
+  .card::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #e879f9, #d946ef);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white px-5 py-2.5 rounded-xl font-medium hover:from-primary-600 hover:to-primary-700 transition-all duration-300 shadow-soft hover:shadow-hover transform hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-400 to-secondary-500 text-white px-5 py-2.5 rounded-xl font-medium hover:from-secondary-500 hover:to-secondary-600 transition-all duration-300 shadow-soft hover:shadow-hover transform hover:-translate-y-0.5;
+  }
+  
+  .btn-success {
+    @apply bg-gradient-to-r from-success-400 to-success-500 text-white px-5 py-2.5 rounded-xl font-medium hover:from-success-500 hover:to-success-600 transition-all duration-300 shadow-soft hover:shadow-hover transform hover:-translate-y-0.5;
+  }
+  
+  .btn-danger {
+    @apply bg-gradient-to-r from-danger-400 to-danger-500 text-white px-5 py-2.5 rounded-xl font-medium hover:from-danger-500 hover:to-danger-600 transition-all duration-300 shadow-soft hover:shadow-hover transform hover:-translate-y-0.5;
+  }
+  
+  .card {
+    @apply bg-white/95 backdrop-blur-md rounded-2xl shadow-card border border-primary-100/50 p-6 transition-all duration-300 hover:shadow-soft hover:border-primary-200/80;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border-2 border-primary-200/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-300 focus:border-primary-400 transition-all duration-200 bg-white/80 placeholder-neutral-400;
+  }
+  
+  .table-header {
+    @apply px-6 py-4 text-left text-xs font-semibold text-primary-700 uppercase tracking-wider bg-gradient-to-r from-primary-50 to-secondary-50;
+  }
+  
+  .table-cell {
+    @apply px-6 py-4 text-sm text-neutral-700;
+  }
+  
+  /* Smooth scroll animations */
+  .fade-in {
+    animation: fadeIn 0.6s ease-in-out;
+  }
+  
+  .slide-in-up {
+    animation: slideInUp 0.6s ease-out;
+  }
+  
+  .slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+  }
+  
+  .slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+  
+  .scale-in {
+    animation: scaleIn 0.4s ease-out;
+  }
+  
+  /* Smooth hover lift effect */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animated Background Keyframes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50px, -50px) rotate(360deg);
+  }
+}
+
+@keyframes floatingShapes {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+    opacity: 0.8;
+  }
+}
+
+/* Fresh Teal & Cyan Theme - All pages automatically themed */
